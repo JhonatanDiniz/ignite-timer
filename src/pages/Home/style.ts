@@ -82,7 +82,7 @@ export const Separator = styled.div`
   justify-content: center;
 `
 
-export const InitCountDownContainer = styled.button`
+export const BaseCountDownContainer = styled.button`
   width: 100%;
   padding: 1rem;
   border: 0;
@@ -93,16 +93,26 @@ export const InitCountDownContainer = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
-  background: ${(props) => props.theme['green-500']};
   color: ${(props) => props.theme['gray-300']};
 
   &:disabled {
     background: ${(props) => props.theme['green-700']};
     cursor: not-allowed;
   }
+`
+
+export const InitCountDownContainer = styled(BaseCountDownContainer)`
+  background: ${(props) => props.theme['green-500']};
 
   &:not(:disabled):hover {
     background: ${(props) => props.theme['green-300']};
+  }
+`
+
+export const StopCountDownContainer = styled(BaseCountDownContainer)`
+  background: ${(props) => props.theme['red-500']};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['red-300']};
   }
 `
